@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AvaloniaPeliculas/App.axaml" value="AvaloniaPeliculas/AvaloniaPeliculas.csproj" />
+        <entry key="AvaloniaPeliculas/MainWindow.axaml" value="AvaloniaPeliculas/AvaloniaPeliculas.csproj" />
+        <entry key="AvaloniaPeliculas/Styles.axaml" value="AvaloniaPeliculas/AvaloniaPeliculas.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

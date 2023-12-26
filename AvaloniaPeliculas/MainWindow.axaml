@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="900"
+        x:Class="AvaloniaPeliculas.MainWindow"
+        MinWidth="1280"
+        MinHeight="800"
+        WindowStartupLocation="CenterScreen"
+        Title="Mi Catálogo de Películas"
+        Icon="assets/movie.ico">
+    <Window.Background>
+        <ImageBrush Source="assets/cinema.jpg" Stretch="Fill"></ImageBrush>
+    </Window.Background>
+    <Grid RowDefinitions="*" ColumnDefinitions="*, *" Margin="50">
+        <StackPanel Grid.Column="0" Margin="0,0,200,0" HorizontalAlignment="Left">
+            <Grid RowDefinitions="*, *, *, *, *" ColumnDefinitions="Auto, Auto">
+                <Grid Grid.Row="0" Grid.Column="0" Background="Transparent">
+                    <TextBox Classes="baseStyle">Año de publicación: </TextBox>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="1" Background="Transparent">
+                    <TextBox Name="TxtAnio" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0" Background="Transparent">
+                    <TextBox Classes="baseStyle">Puntuación en imdb: </TextBox>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1" Background="Transparent">
+                    <TextBox Name="TxtPuntuacion" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0" Background="Transparent">
+                    <TextBox Classes="baseStyle">Título: </TextBox>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1" Background="Transparent">
+                    <TextBox Name="TxtTitulo" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="0" Background="Transparent">
+                    <TextBox Classes="baseStyle">Director: </TextBox>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1" Background="Transparent">
+                    <TextBox Name="TxtDirector" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="0" Background="Transparent">
+                    <TextBox Classes="baseStyle">Género: </TextBox>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="1" Background="Transparent">
+                    <TextBox Name="TxGenero" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                </Grid>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+            <Grid RowDefinitions="*, *" ColumnDefinitions="Auto,Auto">
+                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Image Name="Aa" Width="448" Height="656" Stretch="UniformToFill"></Image>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Button>aaaa</Button>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Button HorizontalAlignment="Right">bbbb</Button>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+
+</Window>
