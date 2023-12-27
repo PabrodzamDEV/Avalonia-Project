@@ -119,6 +119,7 @@ C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\AvaloniaPeliculas.AssemblyInfoInputs.cache
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\AvaloniaPeliculas.AssemblyInfo.cs
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\AvaloniaPeliculas.csproj.CoreCompileInputs.cache
+C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\AvaloniaPeliculas.sourcelink.json
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\Avalonia\references
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\Avalonia\original.dll
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\Avalonia\original.pdb

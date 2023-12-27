@@ -7,59 +7,136 @@
         MinWidth="1280"
         MinHeight="800"
         WindowStartupLocation="CenterScreen"
+        Background="#1e1e1e"
         Title="Mi Catálogo de Películas"
         Icon="assets/movie.ico">
-    <Window.Background>
-        <ImageBrush Source="assets/cinema.jpg" Stretch="Fill"></ImageBrush>
-    </Window.Background>
-    <Grid RowDefinitions="*" ColumnDefinitions="*, *" Margin="50">
-        <StackPanel Grid.Column="0" Margin="0,0,200,0" HorizontalAlignment="Left">
-            <Grid RowDefinitions="*, *, *, *, *" ColumnDefinitions="Auto, Auto">
-                <Grid Grid.Row="0" Grid.Column="0" Background="Transparent">
-                    <TextBox Classes="baseStyle">Año de publicación: </TextBox>
+    <SplitView
+        Name="SplitViewPanel"
+        IsPaneOpen="False"
+        OpenPaneLength="200"
+        CompactPaneLength="48"
+        DisplayMode="CompactInline"
+        PaneBackground="#1e1e1e">
+        <SplitView.Pane>
+            <StackPanel Spacing="5"
+                        Margin="5">
+                <Button Click="OnPanelButtonCliked">
+                    <PathIcon Data="{StaticResource LineHorizontal3Regular}"></PathIcon>
+                </Button>
+                <ListBox Background="#1e1e1e" Foreground="white">
+                    <ListBoxItem HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal">
+                            <PathIcon Data="{StaticResource AddSquareRegular}"></PathIcon>
+                            <TextBlock Classes="panelStyle">Añadir</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <PathIcon Data="{StaticResource EditRegular}"></PathIcon>
+                            <TextBlock Classes="panelStyle">Modificar</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <PathIcon Data="{StaticResource EraseRegular}"></PathIcon>
+                            <TextBlock Classes="panelStyle">Borrar</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <PathIcon Data="{StaticResource FolderBriefcaseRegular}"></PathIcon>
+                            <TextBlock Classes="panelStyle">Cargar desde archivo</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <StackPanel Orientation="Horizontal">
+                            <PathIcon Data="{StaticResource SaveRegular}"></PathIcon>
+                            <TextBlock Classes="panelStyle">Guardar en archivo</TextBlock>
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Border CornerRadius="24 0 0 0">
+                <Border.Background>
+                    <ConicGradientBrush>
+                        <GradientStop Color="#B1060F" Offset="0.1" />
+                        <GradientStop Color="#D62528" Offset="0.15" />
+                        <GradientStop Color="#5C5C5C" Offset="0.2" />
+                        <GradientStop Color="#100000" Offset="0.4" />
+                        <GradientStop Color="#000000" Offset="0.9" />
+                    </ConicGradientBrush>
+                </Border.Background>
+                <Grid RowDefinitions="*" ColumnDefinitions="*, *" Margin="50">
+                    <StackPanel Grid.Column="0" Margin="0,0,200,0" HorizontalAlignment="Left">
+                        <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="Auto, Auto">
+                            <Grid Grid.Row="0" Grid.Column="0" Background="Transparent">
+                                <TextBox Classes="baseStyle">Año de publicación: </TextBox>
+                            </Grid>
+                            <Grid Grid.Row="0" Grid.Column="1" Background="Transparent">
+                                <TextBox Name="TxtAnio" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.Column="0" Background="Transparent">
+                                <TextBox Classes="baseStyle">Puntuación en imdb: </TextBox>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.Column="1" Background="Transparent">
+                                <TextBox Name="TxtPuntuacion" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                            </Grid>
+                            <Grid Grid.Row="2" Grid.Column="0" Background="Transparent">
+                                <TextBox Classes="baseStyle">Título: </TextBox>
+                            </Grid>
+                            <Grid Grid.Row="2" Grid.Column="1" Background="Transparent">
+                                <TextBox Name="TxtTitulo" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                            </Grid>
+                            <Grid Grid.Row="3" Grid.Column="0" Background="Transparent">
+                                <TextBox Classes="baseStyle">Director: </TextBox>
+                            </Grid>
+                            <Grid Grid.Row="3" Grid.Column="1" Background="Transparent">
+                                <TextBox Name="TxtDirector" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                            </Grid>
+                            <Grid Grid.Row="4" Grid.Column="0" Background="Transparent">
+                                <TextBox Classes="baseStyle">Género: </TextBox>
+                            </Grid>
+                            <Grid Grid.Row="4" Grid.Column="1" Background="Transparent">
+                                <TextBox Name="TxGenero" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                            </Grid>
+                            <Grid Grid.Row="5" Grid.Column="0" Background="Transparent" Margin="0 64 64 0">
+                                <Image Source="assets\adult_content.png"></Image>
+                            </Grid>
+                            <Grid Grid.Row="5" Grid.Column="1" Background="Transparent" Margin="0 64 64 0">
+                                <PathIcon Foreground="#00B021" Width="120" Height="120" Data="{StaticResource EyeShowRegular}"></PathIcon>
+                            </Grid>
+                            
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                        <Grid RowDefinitions="*, *" ColumnDefinitions="Auto,Auto">
+                            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Border
+                                    ClipToBounds="True"
+                                    CornerRadius="30 30 30 30"
+                                    BorderBrush="white">
+                                    <Image Name="Aa" Width="448" Height="656" Stretch="UniformToFill"></Image>
+                                </Border>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.Column="0">
+                                <Button Width="120" Margin="0 24 0 0">
+                                    <PathIcon Data="{StaticResource PreviousRegular}"></PathIcon>
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Button HorizontalAlignment="Right" Width="120" Margin="0 24 0 0">
+                                    <PathIcon Data="{StaticResource NextRegular}"></PathIcon>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
                 </Grid>
-                <Grid Grid.Row="0" Grid.Column="1" Background="Transparent">
-                    <TextBox Name="TxtAnio" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="0" Background="Transparent">
-                    <TextBox Classes="baseStyle">Puntuación en imdb: </TextBox>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="1" Background="Transparent">
-                    <TextBox Name="TxtPuntuacion" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
-                </Grid>
-                <Grid Grid.Row="2" Grid.Column="0" Background="Transparent">
-                    <TextBox Classes="baseStyle">Título: </TextBox>
-                </Grid>
-                <Grid Grid.Row="2" Grid.Column="1" Background="Transparent">
-                    <TextBox Name="TxtTitulo" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
-                </Grid>
-                <Grid Grid.Row="3" Grid.Column="0" Background="Transparent">
-                    <TextBox Classes="baseStyle">Director: </TextBox>
-                </Grid>
-                <Grid Grid.Row="3" Grid.Column="1" Background="Transparent">
-                    <TextBox Name="TxtDirector" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
-                </Grid>
-                <Grid Grid.Row="4" Grid.Column="0" Background="Transparent">
-                    <TextBox Classes="baseStyle">Género: </TextBox>
-                </Grid>
-                <Grid Grid.Row="4" Grid.Column="1" Background="Transparent">
-                    <TextBox Name="TxGenero" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
-                </Grid>
-            </Grid>
-        </StackPanel>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Right">
-            <Grid RowDefinitions="*, *" ColumnDefinitions="Auto,Auto">
-                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                    <Image Name="Aa" Width="448" Height="656" Stretch="UniformToFill"></Image>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="0">
-                    <Button>aaaa</Button>
-                </Grid>
-                <Grid Grid.Row="1" Grid.Column="1">
-                    <Button HorizontalAlignment="Right">bbbb</Button>
-                </Grid>
-            </Grid>
-        </StackPanel>
-    </Grid>
+            </Border>
+        </SplitView.Content>
+
+    </SplitView>
+
 
 </Window>

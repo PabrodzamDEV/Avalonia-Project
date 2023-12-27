@@ -20,16 +20,16 @@
 
 
     <ItemGroup>
-      <None Remove="assets\cinema.jpg" />
-      <AvaloniaResource Include="assets\cinema.jpg">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </AvaloniaResource>
       <None Remove="assets\movie.ico" />
       <AvaloniaResource Include="assets\movie.ico">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </AvaloniaResource>
       <None Remove="assets\cover_power_of_dog.jpg" />
       <AvaloniaResource Include="assets\cover_power_of_dog.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\adult_content.png" />
+      <AvaloniaResource Include="assets\adult_content.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </AvaloniaResource>
     </ItemGroup>
