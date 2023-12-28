@@ -1,6 +1,8 @@
-﻿namespace AvaloniaPeliculas.Exceptions;
+﻿using System;
 
-public class InvalidScoreException
+namespace AvaloniaPeliculas.Exceptions;
+
+public class InvalidScoreException : Exception
 {
-    
+    public InvalidScoreException(string message) : base(message) { }
 }

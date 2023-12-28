@@ -1,6 +1,12 @@
-﻿namespace AvaloniaPeliculas;
+﻿using System;
+using System.Drawing.Imaging;
+using System.IO;
+using Avalonia.Controls;
 
-public class Utils
+
+namespace AvaloniaPeliculas
 {
-    
+    internal class Utils
+    {
+    }
 }

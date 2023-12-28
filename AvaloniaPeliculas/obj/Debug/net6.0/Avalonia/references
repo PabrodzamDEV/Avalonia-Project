@@ -21,6 +21,7 @@ C:\Users\pablo\.nuget\packages\avalonia.themes.fluent\11.0.6\lib\net6.0\Avalonia
 C:\Users\pablo\.nuget\packages\avalonia.themes.simple\11.0.6\lib\net6.0\Avalonia.Themes.Simple.dll
 C:\Users\pablo\.nuget\packages\avalonia.win32\11.0.6\lib\net6.0\Avalonia.Win32.dll
 C:\Users\pablo\.nuget\packages\avalonia.x11\11.0.6\lib\net6.0\Avalonia.X11.dll
+C:\Users\pablo\.nuget\packages\dialoghost.avalonia\0.7.7\lib\netstandard2.0\DialogHost.Avalonia.dll
 C:\Users\pablo\.nuget\packages\harfbuzzsharp\7.3.0\lib\net6.0\HarfBuzzSharp.dll
 C:\Users\pablo\.nuget\packages\microcom.runtime\0.11.0\lib\net5.0\MicroCom.Runtime.dll
 C:\Users\pablo\.nuget\packages\microsoft.codeanalysis.csharp\3.8.0\lib\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -116,6 +117,7 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.25\ref\net6.0\System
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.25\ref\net6.0\System.Numerics.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.25\ref\net6.0\System.Numerics.Vectors.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.25\ref\net6.0\System.ObjectModel.dll
+C:\Users\pablo\.nuget\packages\system.reactive\6.0.0\lib\net6.0\System.Reactive.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.25\ref\net6.0\System.Reflection.DispatchProxy.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.25\ref\net6.0\System.Reflection.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\6.0.25\ref\net6.0\System.Reflection.Emit.dll

@@ -1,6 +1,10 @@
-﻿namespace AvaloniaPeliculas.Exceptions;
+﻿using System;
 
-public class InvalidReleaseDateException
+namespace AvaloniaPeliculas.Exceptions;
+
+public class InvalidReleaseDateException : Exception
 {
-    
+    public InvalidReleaseDateException(string message) : base(message)
+    {
+    }
 }

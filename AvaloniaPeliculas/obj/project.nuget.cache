@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6DQy1AZX/xEHzBDjGjkJpMcfwT5bp7AJQr1P7CYEQabcorPy2dXbLBLgquy74nN0fmYUCC5QO6zWHwOdLSwHxw==",
+  "dgSpecHash": "2txjWcpJAA1NUyg9yKZtQvvgmDdNd/qgUyMajrnOsD0xxWKDr7mg9G/GrDVOlKaso+27FOeXHhcVqpRHjVv6KQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\pablo\\RiderProjects\\AvaloniaPeliculas\\AvaloniaPeliculas\\AvaloniaPeliculas.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\pablo\\.nuget\\packages\\avalonia.themes.simple\\11.0.6\\avalonia.themes.simple.11.0.6.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\avalonia.win32\\11.0.6\\avalonia.win32.11.0.6.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\avalonia.x11\\11.0.6\\avalonia.x11.11.0.6.nupkg.sha512",
+    "C:\\Users\\pablo\\.nuget\\packages\\dialoghost.avalonia\\0.7.7\\dialoghost.avalonia.0.7.7.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\harfbuzzsharp\\7.3.0\\harfbuzzsharp.7.3.0.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\7.3.0\\harfbuzzsharp.nativeassets.linux.7.3.0.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0\\harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512",
@@ -54,6 +55,7 @@
     "C:\\Users\\pablo\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\pablo\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",

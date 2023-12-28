@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         Background="#1e1e1e"
         Title="Mi Catálogo de Películas"
-        Icon="assets/movie.ico">
+        Icon="..\assets\movie.ico">
     <SplitView
         Name="SplitViewPanel"
         IsPaneOpen="False"
@@ -24,7 +24,7 @@
                     <PathIcon Data="{StaticResource LineHorizontal3Regular}"></PathIcon>
                 </Button>
                 <ListBox Background="#1e1e1e" Foreground="white">
-                    <ListBoxItem HorizontalContentAlignment="Left">
+                    <ListBoxItem DoubleTapped="OnAddMovieDoubleTapped" HorizontalContentAlignment="Left">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource AddSquareRegular}"></PathIcon>
                             <TextBlock Classes="panelStyle">Añadir</TextBlock>
@@ -42,7 +42,7 @@
                             <TextBlock Classes="panelStyle">Borrar</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem>
+                    <ListBoxItem DoubleTapped="OnLoadFromFileDoubleTapped">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource FolderBriefcaseRegular}"></PathIcon>
                             <TextBlock Classes="panelStyle">Cargar desde archivo</TextBlock>
@@ -102,7 +102,7 @@
                                 <TextBox Name="TxGenero" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
                             </Grid>
                             <Grid Grid.Row="5" Grid.Column="0" Background="Transparent" Margin="0 64 64 0">
-                                <Image Source="assets\adult_content.png"></Image>
+                                <Image Source="..\assets\adult_content.png"></Image>
                             </Grid>
                             <Grid Grid.Row="5" Grid.Column="1" Background="Transparent" Margin="0 64 64 0">
                                 <PathIcon Foreground="#00B021" Width="120" Height="120" Data="{StaticResource EyeShowRegular}"></PathIcon>

@@ -130,3 +130,5 @@ C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\AvaloniaPeliculas.csproj.CopyComplete
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\AvaloniaPeliculas.genruntimeconfig.cache
 C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\obj\Debug\net6.0\ref\AvaloniaPeliculas.dll
+C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\bin\Debug\net6.0\DialogHost.Avalonia.dll
+C:\Users\pablo\RiderProjects\AvaloniaPeliculas\AvaloniaPeliculas\bin\Debug\net6.0\System.Reactive.dll

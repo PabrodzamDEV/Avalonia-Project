@@ -20,8 +20,14 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/MainWindow.axaml]
+[C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/Styles.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/Styles.axaml]
+[C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/Views/ErrorDialog.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/Views/InfoDialog.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
