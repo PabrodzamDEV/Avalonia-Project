@@ -11,57 +11,57 @@ public class MoviesControler
     private static int CurrentIndex = -1;
     private static List<Movie> MoviesList = new List<Movie>();
 
-    public static void SetCurrentIndex(int index)
+    public void SetCurrentIndex(int index)
     {
         CurrentIndex = index;
     }
 
-    public static int GetCurrentIndex()
+    public int GetCurrentIndex()
     {
         return CurrentIndex;
     }
 
-    public static void ClearCurrentIndex()
+    public void ClearCurrentIndex()
     {
         CurrentIndex = -1;
     }
 
-    public static void SetMoviesList(List<Movie> list)
+    public void SetMoviesList(List<Movie> list)
     {
         MoviesList = list;
     }
 
-    public static List<Movie> GetMoviesList()
+    public List<Movie> GetMoviesList()
     {
         return MoviesList;
     }
 
-    public static void AddMovieToList(Movie movie)
+    public void AddMovieToList(Movie movie)
     {
         MoviesList.Add(movie);
     }
 
-    public static void RemoveMovieFromList(Movie movie)
+    public void RemoveMovieFromList(Movie movie)
     {
         MoviesList.Remove(movie);
     }
 
-    public static Movie GetMovieFromList(int index)
+    public Movie GetMovieFromList(int index)
     {
         return MoviesList[index];
     }
 
-    public static void ClearList()
+    public void ClearList()
     {
         MoviesList.Clear();
     }
 
-    public static int GetListCount()
+    public int GetListCount()
     {
         return MoviesList.Count;
     }
 
-    public static void WriteMoviesToFile(string filePath, List<Movie> list, bool append = false)
+    public void WriteMoviesToFile(string filePath, List<Movie> list, bool append = false)
     {
         string message = "";
         string caption = "";
@@ -113,7 +113,7 @@ public class MoviesControler
         }
     }
 
-    public static List<Movie> LoadMoviesFromFile(Stream stream)
+    public List<Movie> LoadMoviesFromFile(Stream stream)
     {
         string message = "";
         string caption = "";
@@ -130,7 +130,7 @@ public class MoviesControler
                         int releaseDate = reader.ReadInt32();
                         float imdbScore = reader.ReadSingle();
                         bool adultContent = reader.ReadBoolean();
-                        char watched = reader.ReadChar();
+                        bool watched = reader.ReadBoolean();
                         string title = reader.ReadString();
                         string director = reader.ReadString();
                         string genre = reader.ReadString();
@@ -193,6 +193,9 @@ public class MoviesControler
                 }
             }
         }
+        message = "Películas cargadas";
+        caption = "Cargado";
+        MainWindow.LaunchInfoDialog(caption, message);
 
         return ListRead;
     }

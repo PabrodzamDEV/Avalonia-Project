@@ -1,30 +1,55 @@
 using System;
+using System.Globalization;
 using System.IO;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
-using Avalonia.Threading;
+using AvaloniaPeliculas.Controller;
+using AvaloniaPeliculas.Model;
 using AvaloniaPeliculas.Views;
 
 namespace AvaloniaPeliculas;
 
 public partial class MainWindow : Window
 {
+
+    private static MoviesControler ctrl;
+
+    private static TextBox TxtYear;
+
+    private static TextBox TxtScore;
+
+    private static TextBox TxtTitle;
+
+    private static TextBox TxtDirect;
+
+    private static TextBox TxtGenre;
+    
+    private static Image ImgAdultCont;
+    
+    private static PathIcon IconWatch;
+    
+    private static Image cover;
+    
+
     
     public MainWindow()
     {
         InitializeComponent();
-        
-        // Load an image from a file
-        var imageFilePath = "C:\\Users\\pablo\\RiderProjects\\AvaloniaPeliculas\\AvaloniaPeliculas\\assets\\cover_power_of_dog.jpg";
-        var image = new Bitmap(imageFilePath);
-
-        // Do something with the bitmap, e.g., set it as the source of an Image control
-        var imageControl = this.FindControl<Image>("Aa");
-        imageControl.Source = image;
+        ctrl = new MoviesControler();
+        TxtYear = this.FindControl<TextBox>("TxtAnio");
+        TxtScore = this.FindControl<TextBox>("TxtPuntuacion");
+        TxtTitle = this.FindControl<TextBox>("TxtTitulo");
+        TxtDirect = this.FindControl<TextBox>("TxtDirector");
+        TxtGenre = this.FindControl<TextBox>("TxtGenero");
+        IconWatch = this.FindControl<PathIcon>("IconWatched");
+        ImgAdultCont = this.FindControl<Image>("ImgAdultContent");
+        cover = this.FindControl<Image>("ImgCover");
+        cover.Source = new Bitmap("..\\..\\..\\assets\\default_cover.png");
         
     }
 
@@ -37,6 +62,24 @@ public partial class MainWindow : Window
     public static void LaunchInfoDialog(string caption, string message)
     {
         new InfoDialog(caption, message).Show();
+    }
+    
+    public static void DisplayImage(byte[] array, Image image)
+    {
+        try
+        {
+            // Create a MemoryStream from the byte array
+            using (MemoryStream stream = new MemoryStream(array))
+            {
+                // Create a Bitmap from the MemoryStream
+                Bitmap bitmap = new Bitmap(stream);
+                image.Source = bitmap;
+            }
+        }
+        catch (Exception ex)
+        {
+            LaunchErrorDialog("Error displaying image", ex.Message);
+        }
     }
 
     private void OnPanelButtonCliked(object? sender, RoutedEventArgs e)
@@ -74,7 +117,20 @@ public partial class MainWindow : Window
 
     private void OnAddMovieDoubleTapped(object? sender, TappedEventArgs e)
     {
-        LaunchErrorDialog("Error", "Esto es un ejemplo de mensaje de error");
+        new MovieCreationWindow().Show();
+    }
+
+    public static void showCurrentMovie(Movie movie)
+    {
+        TxtYear.Text = movie.ReleaseDate.ToString();
+        TxtScore.Text = movie.ImdbScore.ToString(CultureInfo.CurrentCulture);
+        TxtTitle.Text = movie.Title;
+        TxtDirect.Text = movie.Director;
+        TxtGenre.Text = movie.Genre;
+        IconWatch.Data = movie.Watched ? (StreamGeometry)Application.Current.FindResource("EyeShowRegular") : (StreamGeometry)Application.Current.FindResource("EyeHideRegular");
+        ImgAdultCont.IsVisible = movie.AdultContent;
+        DisplayImage(movie.Cover, cover);
+        ctrl.SetCurrentIndex(ctrl.GetMoviesList().IndexOf(movie));
     }
     
 }

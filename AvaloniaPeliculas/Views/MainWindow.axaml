@@ -99,13 +99,19 @@
                                 <TextBox Classes="baseStyle">Género: </TextBox>
                             </Grid>
                             <Grid Grid.Row="4" Grid.Column="1" Background="Transparent">
-                                <TextBox Name="TxGenero" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
+                                <TextBox Name="TxtGenero" Classes="baseStyle" HorizontalContentAlignment="Center"></TextBox>
                             </Grid>
                             <Grid Grid.Row="5" Grid.Column="0" Background="Transparent" Margin="0 64 64 0">
-                                <Image Source="..\assets\adult_content.png"></Image>
+                                <Image Name="ImgAdultContent" 
+                                       Opacity="0.6"
+                                       Source="..\assets\adult_content.png"></Image>
                             </Grid>
                             <Grid Grid.Row="5" Grid.Column="1" Background="Transparent" Margin="0 64 64 0">
-                                <PathIcon Foreground="#00B021" Width="120" Height="120" Data="{StaticResource EyeShowRegular}"></PathIcon>
+                                <PathIcon Name="IconWatched" 
+                                          Foreground="#00B021" 
+                                          Width="120" Height="120"
+                                          Opacity="0.6"
+                                          Data="{StaticResource EyeShowRegular}"></PathIcon>
                             </Grid>
                             
                         </Grid>
@@ -117,7 +123,7 @@
                                     ClipToBounds="True"
                                     CornerRadius="30 30 30 30"
                                     BorderBrush="white">
-                                    <Image Name="Aa" Width="448" Height="656" Stretch="UniformToFill"></Image>
+                                    <Image Name="ImgCover" Width="448" Height="656" Stretch="UniformToFill"></Image>
                                 </Border>
                             </Grid>
                             <Grid Grid.Row="1" Grid.Column="0">

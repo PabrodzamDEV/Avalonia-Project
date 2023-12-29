@@ -31,3 +31,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/pablo/RiderProjects/AvaloniaPeliculas/AvaloniaPeliculas/Views/MovieCreationWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

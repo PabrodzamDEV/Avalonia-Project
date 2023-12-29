@@ -10,6 +10,7 @@
         <entry key="AvaloniaPeliculas/Views/ErrorMessageWindow.axaml" value="AvaloniaPeliculas/AvaloniaPeliculas.csproj" />
         <entry key="AvaloniaPeliculas/Views/InfoDialog.axaml" value="AvaloniaPeliculas/AvaloniaPeliculas.csproj" />
         <entry key="AvaloniaPeliculas/Views/MainWindow.axaml" value="AvaloniaPeliculas/AvaloniaPeliculas.csproj" />
+        <entry key="AvaloniaPeliculas/Views/MovieCreationWindow.axaml" value="AvaloniaPeliculas/AvaloniaPeliculas.csproj" />
         <entry key="AvaloniaPeliculas/Views/Test.axaml" value="AvaloniaPeliculas/AvaloniaPeliculas.csproj" />
       </map>
     </option>

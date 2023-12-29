@@ -1,0 +1,113 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+        x:Class="AvaloniaPeliculas.Views.MovieCreationWindow"
+        Title="Crear una nueva pelicula"
+        MinWidth="1200"
+        MaxWidth="1200"
+        MinHeight="864"
+        MaxHeight="864"
+        WindowStartupLocation="CenterScreen"
+        Icon="..\assets\movie.ico"
+        Background="#1e1e1e">
+    <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="50 50 50 50">
+        <Grid RowDefinitions="*, *, *, *, *, *, *" ColumnDefinitions="Auto, Auto" Margin="0 0 48 0">
+            <Grid Grid.Row="0" Grid.Column="0" Background="Transparent">
+                <TextBox Classes="baseStyle">Año de publicación: </TextBox>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1" Background="Transparent">
+                <MaskedTextBox Mask="0000" 
+                               Classes="baseStyle"
+                               IsReadOnly="False" 
+                               Focusable="True" 
+                               Name="TxtAnio" 
+                               Foreground="Gold"
+                               HorizontalContentAlignment="Left">
+                </MaskedTextBox>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0" Background="Transparent">
+                <TextBox Classes="baseStyle">Puntuación en imdb: </TextBox>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1" Background="Transparent">
+                <MaskedTextBox Mask="0.0" 
+                               IsReadOnly="False" 
+                               Focusable="True" 
+                               Name="TxtPuntuacion" 
+                               Classes="baseStyle"
+                               Foreground="Gold"
+                               HorizontalContentAlignment="Left">
+                </MaskedTextBox>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0" Background="Transparent">
+                <TextBox Classes="baseStyle">Título: </TextBox>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1" Background="Transparent">
+                <TextBox Name="TxtTitulo" 
+                         IsReadOnly="False" 
+                         Focusable="True" 
+                         Classes="baseStyle"
+                         Foreground="Gold"
+                         Width="300"
+                         HorizontalContentAlignment="Left">
+                </TextBox>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="0" Background="Transparent">
+                <TextBox Classes="baseStyle">Director: </TextBox>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1" Background="Transparent">
+                <TextBox Name="TxtDirector" 
+                         IsReadOnly="False" 
+                         Focusable="True" 
+                         Classes="baseStyle"
+                         Foreground="Gold"
+                         Width="300"
+                         HorizontalContentAlignment="Left">
+                </TextBox>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="0" Background="Transparent">
+                <TextBox Classes="baseStyle">Género: </TextBox>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1" Background="Transparent">
+                <StackPanel Width="300" Orientation="Horizontal">
+                    <TextBox Foreground="Gold" Name="TxtGenero" Classes="baseStyle" HorizontalContentAlignment="Left"></TextBox>
+                    <ComboBox SelectionChanged="OnGenreSelectionEvent" Name="CbGenero" Classes="baseStyle" HorizontalContentAlignment="Left"></ComboBox>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="0" Background="Transparent">
+                <TextBox Classes="baseStyle">Para adultos: </TextBox>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="1" Background="Transparent">
+                <CheckBox VerticalAlignment="Top" 
+                          HorizontalAlignment="Center" 
+                          Name="CbAdultContent"
+                          IsChecked="False"></CheckBox>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="0" Background="Transparent">
+                <TextBox Classes="baseStyle">Vista: </TextBox>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="1" Background="Transparent">
+                <CheckBox VerticalAlignment="Top" 
+                          HorizontalAlignment="Center" 
+                          Name="CbWatched"
+                          IsChecked="False"></CheckBox>
+            </Grid>
+        </Grid>
+        <Border
+            ClipToBounds="True"
+            CornerRadius="30 30 30 30"
+            BorderBrush="white"
+            Width="448" Height="656">
+            <Image Tapped="OnNewCoverTapped" Source="..\assets\default_cover.png" Name="NewCover" Width="448" Height="656" Stretch="UniformToFill"></Image>
+        </Border>
+    </StackPanel>
+        <Button Click="OnAddMovieClicked" Background="Transparent" HorizontalAlignment="Center">
+            <PathIcon Width="64"
+                      Height="64" 
+                      Data="{StaticResource AddSquareRegular}"></PathIcon>
+        </Button>
+    </StackPanel>
+
+</Window>

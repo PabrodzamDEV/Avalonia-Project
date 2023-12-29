@@ -26,9 +26,6 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </AvaloniaResource>
       <None Remove="assets\cover_power_of_dog.jpg" />
-      <AvaloniaResource Include="assets\cover_power_of_dog.jpg">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </AvaloniaResource>
       <None Remove="assets\adult_content.png" />
       <AvaloniaResource Include="assets\adult_content.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -39,6 +36,10 @@
       </AvaloniaResource>
       <None Remove="assets\info.ico" />
       <AvaloniaResource Include="assets\info.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\default_cover.png" />
+      <AvaloniaResource Include="assets\default_cover.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </AvaloniaResource>
     </ItemGroup>
