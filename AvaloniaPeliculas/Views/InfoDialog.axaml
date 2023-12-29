@@ -6,6 +6,8 @@
         x:Class="AvaloniaPeliculas.Views.InfoDialog"
         HorizontalContentAlignment="Center"
         Icon="..\assets\info.ico"
+        Width="400"
+        Height="120"
         WindowStartupLocation="CenterScreen"
         Background="#D9D9D9">
         <StackPanel VerticalAlignment="Center">

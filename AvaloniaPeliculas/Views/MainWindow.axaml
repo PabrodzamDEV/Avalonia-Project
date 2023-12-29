@@ -48,7 +48,7 @@
                             <TextBlock Classes="panelStyle">Cargar desde archivo</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem>
+                    <ListBoxItem DoubleTapped="OnSaveMoviesToFileDoubleTapped">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource SaveRegular}"></PathIcon>
                             <TextBlock Classes="panelStyle">Guardar en archivo</TextBlock>
@@ -117,8 +117,8 @@
                         </Grid>
                     </StackPanel>
                     <StackPanel Grid.Column="1" HorizontalAlignment="Right">
-                        <Grid RowDefinitions="*, *" ColumnDefinitions="Auto,Auto">
-                            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <Grid RowDefinitions="*, *" ColumnDefinitions="Auto,Auto, Auto">
+                            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
                                 <Border
                                     ClipToBounds="True"
                                     CornerRadius="30 30 30 30"
@@ -127,12 +127,28 @@
                                 </Border>
                             </Grid>
                             <Grid Grid.Row="1" Grid.Column="0">
-                                <Button Width="120" Margin="0 24 0 0">
+                                <Button 
+                                        Name="PreviousArrowButton"
+                                        Click="OnPreviousArrowButtonClicked" 
+                                        Width="120" 
+                                        Margin="0 24 0 0">
                                     <PathIcon Data="{StaticResource PreviousRegular}"></PathIcon>
                                 </Button>
                             </Grid>
                             <Grid Grid.Row="1" Grid.Column="1">
-                                <Button HorizontalAlignment="Right" Width="120" Margin="0 24 0 0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox Name="TxtCurrentIndex" Classes="baseStyle">0</TextBox>
+                                    <TextBox Classes="baseStyle">/</TextBox>
+                                    <TextBox Name="TxtMovieCount" Classes="baseStyle">0</TextBox>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="1" Grid.Column="2">
+                                <Button 
+                                    Name="NextArrowButton"
+                                    Click="OnNextArrowButtonClicked"
+                                    HorizontalAlignment="Right" 
+                                    Width="120" 
+                                    Margin="0 24 0 0">
                                     <PathIcon Data="{StaticResource NextRegular}"></PathIcon>
                                 </Button>
                             </Grid>
