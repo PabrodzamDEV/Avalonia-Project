@@ -46,6 +46,11 @@ public class MoviesControler
         MoviesList.Remove(movie);
     }
 
+    public void EditMovie(Movie editedMovie)
+    {
+        MoviesList[CurrentIndex] = editedMovie;
+    }
+
     public Movie GetMovieFromList(int index)
     {
         return MoviesList[index];

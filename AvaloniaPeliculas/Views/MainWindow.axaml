@@ -24,31 +24,31 @@
                     <PathIcon Data="{StaticResource LineHorizontal3Regular}"></PathIcon>
                 </Button>
                 <ListBox Background="#1e1e1e" Foreground="white">
-                    <ListBoxItem DoubleTapped="OnAddMovieDoubleTapped" HorizontalContentAlignment="Left">
+                    <ListBoxItem Name="ListBoxItem1" DoubleTapped="OnAddMovieDoubleTapped" HorizontalContentAlignment="Left">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource AddSquareRegular}"></PathIcon>
                             <TextBlock Classes="panelStyle">Añadir</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem>
+                    <ListBoxItem Name="ListBoxItem2" DoubleTapped="OnModifyDoubleTapped">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource EditRegular}"></PathIcon>
                             <TextBlock Classes="panelStyle">Modificar</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem>
+                    <ListBoxItem Name="ListBoxItem3" DoubleTapped="OnDeleteMovieDoubleTapped">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource EraseRegular}"></PathIcon>
                             <TextBlock Classes="panelStyle">Borrar</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem DoubleTapped="OnLoadFromFileDoubleTapped">
+                    <ListBoxItem Name="ListBoxItem4" DoubleTapped="OnLoadFromFileDoubleTapped">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource FolderBriefcaseRegular}"></PathIcon>
                             <TextBlock Classes="panelStyle">Cargar desde archivo</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <ListBoxItem DoubleTapped="OnSaveMoviesToFileDoubleTapped">
+                    <ListBoxItem Name="ListBoxItem5" DoubleTapped="OnSaveMoviesToFileDoubleTapped">
                         <StackPanel Orientation="Horizontal">
                             <PathIcon Data="{StaticResource SaveRegular}"></PathIcon>
                             <TextBlock Classes="panelStyle">Guardar en archivo</TextBlock>

@@ -19,8 +19,14 @@ public partial class MainWindow : Window
 
     private static MoviesControler ctrl;
 
-    private Button PreviousArrowBtn;
-    private Button NextArrowBtn;
+    private static Button PreviousArrowBtn;
+    private static Button NextArrowBtn;
+
+    private static ListBoxItem lbi1;
+    private static ListBoxItem lbi2;
+    private static ListBoxItem lbi3;
+    private static ListBoxItem lbi4;
+    private static ListBoxItem lbi5;
 
     private static TextBox TxtYear;
 
@@ -61,7 +67,12 @@ public partial class MainWindow : Window
         cover.Source = new Bitmap("..\\..\\..\\assets\\default_cover.png");
         TxtInd = this.FindControl<TextBox>("TxtCurrentIndex");
         TxtCnt = this.FindControl<TextBox>("TxtMovieCount");
-        UpdateControlsVisibility();
+        lbi1 = this.FindControl<ListBoxItem>("ListBoxItem1");
+        lbi2 = this.FindControl<ListBoxItem>("ListBoxItem2");
+        lbi3 = this.FindControl<ListBoxItem>("ListBoxItem3");
+        lbi4 = this.FindControl<ListBoxItem>("ListBoxItem4");
+        lbi5 = this.FindControl<ListBoxItem>("ListBoxItem5");
+        EnableWindowInteractivity();
         
     }
 
@@ -105,6 +116,20 @@ public partial class MainWindow : Window
         new MovieCreationWindow().Show();
     }
 
+    public static void showEmptyMovie()
+    {
+        TxtYear.Text = "";
+        TxtScore.Text = "";
+        TxtTitle.Text = "";
+        TxtDirect.Text = "";
+        TxtGenre.Text = "";
+        IconWatch.Data = (StreamGeometry)Application.Current.FindResource("EyeHideRegular");
+        ImgAdultCont.IsVisible = true;
+        cover.Source = new Bitmap("..\\..\\..\\assets\\default_cover.png");
+        ctrl.SetCurrentIndex(-1);
+        TxtInd.Text = (ctrl.GetCurrentIndex() + 1).ToString();
+        TxtCnt.Text = ctrl.GetListCount().ToString();
+    }
     public static void showCurrentMovie(Movie movie)
     {
         TxtYear.Text = movie.ReleaseDate.ToString();
@@ -164,10 +189,10 @@ public partial class MainWindow : Window
                 showCurrentMovie(ctrl.GetMovieFromList(0));
             }
         }
-        UpdateControlsVisibility();
+        EnableWindowInteractivity();
     }
 
-    private void UpdateControlsVisibility()
+    public static void UpdateArrowsInteractivity()
     {
         PreviousArrowBtn.IsEnabled = true;
         NextArrowBtn.IsEnabled = true;
@@ -185,6 +210,37 @@ public partial class MainWindow : Window
             NextArrowBtn.IsEnabled = false;
         }
     }
+
+    public static void DisableWindowInteractivity()
+    {
+        lbi1.IsEnabled = false;
+        lbi2.IsEnabled = false;
+        lbi3.IsEnabled = false;
+        lbi4.IsEnabled = false;
+        lbi5.IsEnabled = false;
+        PreviousArrowBtn.IsEnabled = false;
+        NextArrowBtn.IsEnabled = false;
+    }
+
+    public static void EnableWindowInteractivity()
+    {
+        lbi1.IsEnabled = true;
+        if (ctrl.GetListCount() == 0)
+        {
+            lbi2.IsEnabled = false;
+            lbi3.IsEnabled = false;
+        }
+        else
+        {
+            lbi2.IsEnabled = true;
+            lbi3.IsEnabled = true;
+        }
+        lbi4.IsEnabled = true;
+        lbi5.IsEnabled = true;
+        UpdateArrowsInteractivity();
+    }
+    
+    
     private void OnSaveMoviesToFileDoubleTapped(object? sender, TappedEventArgs e)
     {
         string path = GetDocumentsFolderPath() + "\\databank.data";
@@ -195,13 +251,38 @@ public partial class MainWindow : Window
     {
         ctrl.SetCurrentIndex(ctrl.GetCurrentIndex() - 1);
         showCurrentMovie(ctrl.GetMovieFromList(ctrl.GetCurrentIndex()));
-        UpdateControlsVisibility();
+        UpdateArrowsInteractivity();
     }
 
     private void OnNextArrowButtonClicked(object? sender, RoutedEventArgs e)
     {
         ctrl.SetCurrentIndex(ctrl.GetCurrentIndex() + 1);
         showCurrentMovie(ctrl.GetMovieFromList(ctrl.GetCurrentIndex()));
-        UpdateControlsVisibility();
+        UpdateArrowsInteractivity();
+    }
+
+    private void OnModifyDoubleTapped(object? sender, TappedEventArgs e)
+    {
+        new MovieCreationWindow(ctrl.GetMovieFromList(ctrl.GetCurrentIndex())).Show();
+    }
+
+    private void OnDeleteMovieDoubleTapped(object? sender, TappedEventArgs e)
+    {
+        Console.WriteLine(ctrl.GetCurrentIndex());
+        ctrl.RemoveMovieFromList(ctrl.GetMovieFromList(ctrl.GetCurrentIndex()));
+        if (ctrl.GetListCount() == 0)
+        {
+            showEmptyMovie();
+            EnableWindowInteractivity();
+        }
+        else if (ctrl.GetCurrentIndex() == ctrl.GetListCount())
+        {
+            ctrl.SetCurrentIndex(ctrl.GetCurrentIndex() - 1);
+            showCurrentMovie(ctrl.GetMovieFromList(ctrl.GetCurrentIndex()));
+        }
+        else if(ctrl.GetCurrentIndex() != -1)
+        {
+            showCurrentMovie(ctrl.GetMovieFromList(ctrl.GetCurrentIndex()));
+        }
     }
 }

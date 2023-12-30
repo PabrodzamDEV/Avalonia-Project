@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using AvaloniaPeliculas.Controller;
 using AvaloniaPeliculas.Exceptions;
@@ -15,6 +18,8 @@ public partial class MovieCreationWindow : Window
 {
 
     private MoviesControler ctrl;
+    private Movie movieEdited = null;
+    private bool isEditMode = false;
     private ComboBox comboBox;
     private Image newCover;
     private byte[] fileBytes;
@@ -25,16 +30,35 @@ public partial class MovieCreationWindow : Window
     private string title;
     private string director;
     private string genre;
+    private PathIcon icon;
 
+    public MovieCreationWindow(Movie movieToEdit)
+    {
+        MainWindow.DisableWindowInteractivity();
+        isEditMode = true;
+        InitializeComponent();
+        PrepareWindow();
+        LoadMovieInfo(movieToEdit);
+        comboBox.SelectedItem = movieToEdit.Genre;
+        
+    }
     public MovieCreationWindow()
     {
+        MainWindow.DisableWindowInteractivity();
         InitializeComponent();
 
+        PrepareWindow();
+    }
+
+    private void PrepareWindow()
+    {
         ctrl = new MoviesControler();
 
         comboBox = this.FindControl<ComboBox>("CbGenero");
 
         newCover = this.FindControl<Image>("NewCover");
+
+        icon = this.FindControl<PathIcon>("WindowIcon");
 
         List<string> items = new List<string>
         {
@@ -63,6 +87,30 @@ public partial class MovieCreationWindow : Window
         {
             comboBox.Items.Add(item);
         }
+    }
+
+    private void LoadMovieInfo(Movie movieToEdit)
+    {
+        var releaseDateTextBox = this.FindControl<TextBox>("TxtAnio");
+        var imdbScoreTextBox = this.FindControl<TextBox>("TxtPuntuacion");
+        var adultContentCheckBox = this.FindControl<CheckBox>("CbAdultContent");
+        var watchedCheckBox = this.FindControl<CheckBox>("CbWatched");
+        var titleTextBox = this.FindControl<TextBox>("TxtTitulo");
+        var directorTextBox = this.FindControl<TextBox>("TxtDirector");
+        var genreTextBox = this.FindControl<TextBox>("TxtGenero");
+        icon.Data = (StreamGeometry)Application.Current.FindResource("EditRegular");
+        
+        movieEdited = movieToEdit;
+        
+        releaseDateTextBox.Text = movieToEdit.ReleaseDate.ToString();
+        imdbScoreTextBox.Text = movieToEdit.ImdbScore.ToString(CultureInfo.CurrentCulture);
+        adultContentCheckBox.IsChecked = movieToEdit.AdultContent;
+        watchedCheckBox.IsChecked = movieToEdit.Watched;
+        titleTextBox.Text = movieToEdit.Title;
+        directorTextBox.Text = movieToEdit.Director;
+        genreTextBox.Text = movieToEdit.Genre;
+        fileBytes = movieToEdit.Cover;
+        MainWindow.DisplayImage(fileBytes, newCover);
     }
 
     private void OnGenreSelectionEvent(object? sender, SelectionChangedEventArgs e)
@@ -112,7 +160,15 @@ public partial class MovieCreationWindow : Window
             genre = this.FindControl<TextBox>("TxtGenero").Text;
             Movie newMovie = new Movie(releaseDate, imdbScore, adultContent, watched, title, director, genre,
                 fileBytes);
-            ctrl.AddMovieToList(newMovie);
+            if (isEditMode)
+            {
+                ctrl.EditMovie(newMovie);
+                
+            }
+            else
+            {
+                ctrl.AddMovieToList(newMovie);
+            }
             MainWindow.showCurrentMovie(newMovie);
             Close();
         }
@@ -164,5 +220,11 @@ public partial class MovieCreationWindow : Window
             caption = "Error";
             MainWindow.LaunchErrorDialog(caption, message);
         }
+    }
+
+    protected override void OnClosing(WindowClosingEventArgs e)
+    {
+        MainWindow.EnableWindowInteractivity();
+        base.OnClosing(e);
     }
 }
